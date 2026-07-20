@@ -4,6 +4,7 @@
   # =========================================================================
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -41,6 +42,7 @@
       self,
       nixpkgs,
       home-manager,
+      nix-cachyos-kernel,
       ...
     }@inputs:
     {
@@ -55,6 +57,10 @@
         };
 
         modules = [
+          {
+            nixpkgs.overlays = [ nix-cachyos-kernel.overlay ];
+            }
+
           ./configuration.nix
           ./hardware-configuration.nix
 

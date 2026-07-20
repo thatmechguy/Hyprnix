@@ -143,7 +143,7 @@
   programs.git = {
     enable = true;
     package = pkgs.gitFull; # Tells Nix to provision the full binary bundle
-    extraConfig = {
+    settings = {
       credential.helper = "libsecret"; # Native integration inside Home Manager
     };
   };
