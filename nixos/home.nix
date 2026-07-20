@@ -140,6 +140,15 @@
   # =========================================================================
   programs.vesktop.enable = true;
 
+  programs.git = {
+    enable = true;
+    package = pkgs.gitFull; # Tells Nix to provision the full binary bundle
+    extraConfig = {
+      credential.helper = "libsecret"; # Native integration inside Home Manager
+    };
+  };
+
+
   # =========================================================================
   # ===                        HOME PACKAGES LIST                          ===
   # =========================================================================
@@ -149,7 +158,6 @@
     cura-appimage
     fastfetch
     gh
-    git
     kdePackages.kdenlive
     kdePackages.qt6ct
     neovim
