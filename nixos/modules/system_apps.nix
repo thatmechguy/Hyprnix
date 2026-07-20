@@ -1,0 +1,30 @@
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  # =========================================================================
+  # ===                        SYSTEM APPLICATIONS                        ===
+  # =========================================================================
+  programs.firefox.enable = true;
+
+  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+    package = pkgs.millennium-steam;
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    # package = pkgs.obs-studio.override {
+    #   cudaSupport = true;
+    # };
+  };
+}
