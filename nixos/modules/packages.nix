@@ -50,6 +50,7 @@
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     distrobox
+    gnome-text-editor
   ];
 
 
