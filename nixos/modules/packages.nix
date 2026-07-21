@@ -52,6 +52,7 @@
     distrobox
     gnome-text-editor
     libnotify
+    protontricks
   ];
 
 
