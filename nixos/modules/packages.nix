@@ -53,8 +53,12 @@
     gnome-text-editor
     libnotify
     protontricks
+    nexusmods-app
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "nexusmods-app-0.21.1"
+  ];
 
   # ======================================================
   # ======            FLATPAK                       ======
