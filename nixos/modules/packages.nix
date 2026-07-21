@@ -54,6 +54,7 @@
     libnotify
     protontricks
     nexusmods-app
+    gtk3
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
