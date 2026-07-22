@@ -7,27 +7,13 @@ hl.bind(mod .. " + E", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd("zen"))
 hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty -e btop --force-utf"))
 hl.bind(mod .. " +TAB", hl.dsp.focus({ workspace = "previous" }))
-hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
+-- hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
 hl.bind(mod .. " + C", hl.dsp.window.center())
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mod .. " + PERIOD", hl.dsp.exec_cmd("flatpak run xyz.riothedev.emojify"))
-
--- local ipc = "qs -c noctalia-shell ipc call"
-
--- hl.bind(mod .. " + D", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher toggle"))
--- hl.bind(mod .. " + Y", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
--- hl.bind(mod .. " + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
--- hl.bind("XF86Launch1", hl.dsp.exec_cmd(ipc .. " powerProfile cycle"))
--- hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. " media playPause"))
--- hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc .. " media next"))
--- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume increase"))
--- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume decrease"))
--- hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume muteOutput"))
--- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness increase"))
--- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness decrease"))
 
 -- NOCTALIA v5 BINDS --------------------------------------
 
@@ -48,6 +34,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(noc .. " media previous"))
 hl.bind("PRINT", hl.dsp.exec_cmd(noc .. " screenshot-region"))
 hl.bind(mod .. " + PRINT",hl.dsp.exec_cmd(noc .. " screenshot-fullscreen"))
 
+hl.bind("ALT + TAB", hl.dsp.exec_cmd(noc .. " window-switcher"))
 -------------------------------------------------
 
 hl.bind(mod .. " + left", hl.dsp.focus({ direction = "left" }))
