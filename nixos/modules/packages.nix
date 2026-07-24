@@ -55,6 +55,7 @@
     protontricks
     nexusmods-app
     gtk3
+    _7zip-zstd
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
