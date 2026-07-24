@@ -7,10 +7,6 @@ hl.config {
 
         border_size = 2,
 
-        -- col = {
-        --     active_border   = colors.primary,
-        --     inactive_border = colors.surface,
-        -- },
         allow_tearing = true,
     }
 }
