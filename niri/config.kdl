@@ -108,6 +108,11 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
 }
 
+blur {
+    passes 3
+    offset 3.0
+}
+
 window-rule {
     geometry-corner-radius 15
     clip-to-geometry true
