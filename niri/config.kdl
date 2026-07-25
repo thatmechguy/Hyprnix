@@ -1,0 +1,275 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            variant ""
+            model ""
+            options ""
+            rules ""
+        }
+
+        repeat-rate 80
+        repeat-delay 300
+
+        numlock
+    }
+
+    mouse {
+        accel-speed 0.2
+        accel-profile "flat"
+        scroll-factor 1.0
+    }
+
+    touchpad {
+        natural-scroll
+        accel-speed 0.2
+        accel-profile "flat"
+        scroll-factor 1.0
+    }
+
+    focus-follows-mouse
+}
+
+environment {
+    XCURSOR_THEME "Bibata-Modern-Ice"
+    XCURSOR_SIZE "24"
+
+    // MOZ_ENABLE_WAYLAND "1"
+    // XDG_SESSION_TYPE "wayland"
+    // XDG_CURRENT_DESKTOP "niri"
+    // XDG_SESSION_DESKTOP "niri"
+    // MOZ_DBUS_REMOTE "1"
+    // GDK_BACKEND "wayland"
+    // QT_AUTO_SCREEN_SCALE_FACTOR "1"
+    // QT_WAYLAND_FORCE_DPI "physical"
+    // CLUTTER_BACKEND "wayland"
+    // TERM "kitty"
+    // TERMINAL "kitty"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    // STEAM_FORCE_DESKTOPUI_SCALING "1"
+
+    // LIBVA_DRIVER_NAME "nvidia"
+    // GBM_BACKEND "nvidia-drm"
+    // __GLX_VENDOR_LIBRARY_NAME "nvidia"
+    // NVD_BACKEND "direct"
+}
+
+layout {
+    gaps 4
+    background-color "transparent"
+
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        off
+        width 4
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+
+    border {
+        on
+
+        width 2
+        active-color "#ffc87f"
+        inactive-color "#505050"
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+
+    struts {
+    }
+}
+
+spawn-at-startup "noctalia"
+
+prefer-no-csd
+
+hotkey-overlay {
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+}
+
+window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+    // 0.85 opacity (85%) for windows
+    opacity 0.85
+
+    // // Enable background blur
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+
+
+// =============================================================================
+// WORKSPACE RULES (Persistent Workspaces 1-5)
+// =============================================================================
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+// workspace "5"
+
+// =============================================================================
+// WINDOW RULES
+// =============================================================================
+
+// Suppress maximize events for all windows
+window-rule {
+    match app-id=r#".*"#
+    open-maximized false
+}
+
+// Force specific utility apps to open tiled
+window-rule {
+    match app-id=r#"^(org\.wezfurlong\.wezterm|gnome-control-center|pavucontrol|nm-connection-editor)$"#
+    open-floating false
+}
+
+// Open utility & dialog apps in floating mode
+window-rule {
+    match app-id=r#"^(org\.gnome\.Calculator|gnome-calculator|steam|galculator|blueman-manager|xdg-desktop-portal)$"#
+    open-floating true
+}
+
+// Steam notification toasts rules (prevent focus)
+window-rule {
+    match app-id=r#"^(steam)$"# title=r#"^(notificationtoasts)$"#
+    open-focused false
+}
+
+// Opaque for specific performance/media apps
+window-rule {
+    match app-id=r#".*vlc.*|.*blender.*|.*steam_app_.*|.*virt-manager.*|.*qemu.*|affinity|.*krita.*"#
+    opacity 1.0
+}
+
+// Floating file pickers and PenTablet setup with specific size (700x500)
+window-rule {
+    match app-id=r#".*File.*|.*file.*|PenTablet"#
+    open-floating true
+    default-column-width { fixed 700; }
+    default-window-height { fixed 500; }
+}
+
+// Floating Nautilus setup with specific size (850x600)
+window-rule {
+    match app-id=r#".*Nautilus.*"#
+    open-floating true
+    default-column-width { fixed 850; }
+    default-window-height { fixed 600; }
+}
+
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+// =============================================================================
+// LAYER RULES (Noctalia Shell Integration)
+// =============================================================================
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
+
+binds {
+    Mod+Q { close-window; }
+
+    Mod+Return { spawn "kitty"; }
+    Mod+E { spawn "nautilus"; }
+    Mod+B { spawn "zen"; }
+    Mod+Shift+T { spawn "kitty" "-e" "btop" "--force-utf"; }
+    Mod+Tab { focus-workspace-previous; }
+    Mod+C { center-column; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+T { toggle-window-floating; }
+    Mod+W { toggle-overview; }
+
+    // Mod+Period { spawn "flatpak" "run" "xyz.riothedev.emojify"; }
+
+    Mod+D { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+Y { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up" "1"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down" "1"; }
+    XF86AudioMute allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
+    XF86Launch1 allow-when-locked=true { spawn "noctalia" "msg" "power-cycle"; }
+    XF86AudioPlay allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioNext allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
+
+    Print { spawn "noctalia" "msg" "screenshot-region"; }
+    Mod+Print { spawn "noctalia" "msg" "screenshot-fullscreen"; }
+
+    Alt+Tab { spawn "noctalia" "msg" "window-switcher"; }
+
+    Mod+Left { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Up { focus-window-up; }
+    Mod+Down { focus-window-down; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+Shift+0 { move-column-to-workspace 10; }
+
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+
+    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up { move-window-up; }
+    Mod+Shift+Down { move-window-down; }
+
+}
+
+switch-events {
+    lid-close {
+        spawn "sh" "-c" "noctalia msg session lock; powerprofilesctl set balanced"
+    }
+}
+include "noctalia.kdl"
