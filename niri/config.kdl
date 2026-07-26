@@ -67,7 +67,7 @@ layout {
         proportion 0.66667
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
 
     focus-ring {
         off
@@ -145,6 +145,7 @@ workspace "4"
 window-rule {
     match app-id=r#".*"#
     open-maximized false
+    open-fullscreen false
 }
 
 // Force specific utility apps to open tiled
@@ -193,6 +194,16 @@ window-rule {
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
 }
+
+window-rule {
+    match app-id=r#"^org.freecad.FreeCAD$"#
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#".*steam_app_.*"#
+    open-fullscreen true
+    }
 
 // =============================================================================
 // LAYER RULES (Noctalia Shell Integration)
