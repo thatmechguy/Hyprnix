@@ -72,6 +72,7 @@ hl.window_rule({
 		class = ".*File.*|.*file.*|PenTablet",
 	},
 	float = true,
+	center = true,
 	size = { 700, 500 },
 })
 
@@ -88,8 +89,9 @@ hl.layer_rule({
 
 hl.window_rule({
 	match = {
-		class = ".*Nautilus.*",
+		class = ".*Nautilus.*|Xdg-desktop-portal-gtk",
 	},
 	float = true,
+	center = true,
 	size = {850, 600},
 })

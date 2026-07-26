@@ -15,13 +15,13 @@
     xwayland.enable = true;
   };
 
-  programs.niri.enable = true;
+  # programs.niri.enable = true;
 
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      # xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gnome
+      xdg-desktop-portal-hyprland
+      # xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk];
   };
 
@@ -72,7 +72,8 @@
     nexusmods-app
     gtk3
     _7zip-zstd
-    xwayland-satellite
+    # xwayland-satellite
+    ffmpeg
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
