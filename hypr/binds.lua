@@ -48,8 +48,8 @@ for i = 1, 10 do
 	hl.bind(mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "-1" }))
 
 hl.bind(mod .. " + SHIFT + left", hl.dsp.window.swap({ direction = "l" }), { description = "Swap tiled window left" })
 hl.bind(mod .. " + SHIFT + right", hl.dsp.window.swap({ direction = "r" }), { description = "Swap tiled window right" })
