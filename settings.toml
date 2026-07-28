@@ -1,0 +1,246 @@
+config_version = 8
+
+[backdrop]
+enabled = true
+
+[bar]
+order = [ "Top" ]
+
+    [bar.Top]
+    background_opacity = 0.84999998100101948
+    border = "primary"
+    capsule_radius = 12
+    center = [ "notifications", "todo", "media", "power_profile", "clock", "date", "wallhaven", "caffeine" ]
+    end = [ "network", "group:g2", "bluetooth", "tray", "notes", "clipboard", "volume", "brightness", "battery", "session" ]
+    padding = 6
+    radius = 15
+    shadow = false
+    start = [ "launcher", "taskbar", "group:g1" ]
+    thickness = 33
+
+        [[bar.Top.capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "cpu", "ram", "temp" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.Top.capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "network_rx", "network_tx" ]
+        opacity = 1.0
+        padding = 6.0
+
+[calendar]
+enabled = true
+refresh_minutes = 60
+
+    [calendar.account.personal_google]
+    color = "on_primary"
+    name = "Chirayu"
+    type = "google"
+
+[control_center]
+sidebar = "full"
+sidebar_section = "full"
+width = 800
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+    [[control_center.shortcuts]]
+    type = "dark_mode"
+
+[dock]
+background_opacity = 0.84999998100101948
+enabled = true
+icon_size = 39
+launcher_icon = "layout-grid"
+launcher_position = "start"
+pinned = [ "zen", "files", "kitty", "dev.zed.Zed", "codium", "org.blender.Blender", "org.freecad.FreeCAD", "vesktop", "steam" ]
+radius = 15
+reserve_space = false
+shadow = false
+show_dots = true
+smart_auto_hide = true
+
+[hooks]
+battery_charging = "~/Hyprnix/.config/hypr/Scripts/charging.sh"
+battery_discharging = "~/Hyprnix/.config/hypr/Scripts/discharging.sh"
+started = "rfkill block bluetooth"
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 300.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 600.0
+
+[location]
+address = "nashik, india"
+
+[lockscreen_widgets]
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 201.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 1081.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_session_buttons = true
+
+[notification]
+background_opacity = 0.84999998100101948
+
+[osd]
+background_opacity = 0.84999998100101948
+
+[plugin_settings."noctalia/notes"]
+panel_open_near_click = true
+panel_placement = "attached"
+
+[plugin_settings."noctalia/wallhaven"]
+api_key = ""
+download_dir = "~/Pictures/Wallpapers"
+
+[plugins]
+enabled = [ "noctalia/wallhaven", "noctalia/notes", "noctalia/timer", "nightwatch75/todo" ]
+
+[shell]
+avatar_path = "/home/thatmechguy/Downloads/0a398a0299f1ea314f8288d160655bba.png"
+password_style = "random"
+polkit_agent = true
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    categories = false
+    compact = true
+    sort_by_usage = false
+
+    [shell.panel]
+    clipboard_placement = "attached"
+    launcher_placement = "attached"
+    open_near_click_clipboard = true
+    open_near_click_launcher = true
+    polkit_placement = "attached"
+    session_placement = "floating"
+    shadow = false
+    transparency_mode = "soft"
+
+    [shell.screenshot]
+    directory = "~/Pictures/Screenshots"
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "vibrant"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "helix", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
+    community_ids = [ "pywalfox", "zen-browser", "vscode", "zed", "discord", "papirus-icons", "steam" ]
+
+[wallpaper.default]
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-9o97zk.jpg"
+
+[wallpaper.last]
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-9o97zk.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-9o97zk.jpg"
+
+[widget.cpu]
+display = "text"
+
+[widget.launcher]
+glyph = "layout-grid"
+
+[widget.media]
+max_length = 104
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.network_rx]
+display = "text"
+
+[widget.network_tx]
+display = "text"
+
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.ram]
+display = "text"
+
+[widget.taskbar]
+capsule_radius = 15
+empty_color = "surface"
+group_by_workspace = true
+occupied_color = "on_hover"
+workspace_label_placement = "inside"
+
+[widget.temp]
+display = "text"
+
+[widget.todo]
+type = "nightwatch75/todo:todo"
+
+[widget.volume.actions]
+scroll_down = "volume-down 1%"
+scroll_up = "volume-up 1%"
+
+[widget.wallhaven]
+type = "noctalia/wallhaven:wallhaven"
+
+[widget.workspaces]
+labels_only_when_occupied = true

@@ -76,7 +76,7 @@
     ffmpeg
     flutter
     android-tools
-    # android-studio
+    # libdisplay-info
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
