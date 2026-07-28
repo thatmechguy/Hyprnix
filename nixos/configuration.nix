@@ -42,6 +42,8 @@
   programs.localsend.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  # programs.adb.enable = true;
+
 
   # =========================================================================
   # ===                        LOCALIZATION & TIME                        ===
@@ -110,8 +112,11 @@
   # =========================================================================
   # ===                           VIRTUALISATION                          ===
   # =========================================================================
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
+    programs.virt-manager.enable = true;
 
   virtualisation.podman = {
     enable = true;
@@ -129,6 +134,7 @@
       "wheel"
       "dialout"
       "libvirtd"
+      "adbusers"
     ];
     shell = pkgs.zsh;
   };
