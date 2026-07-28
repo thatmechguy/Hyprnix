@@ -74,6 +74,9 @@
     _7zip-zstd
     # xwayland-satellite
     ffmpeg
+    flutter
+    android-tools
+    # android-studio
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
