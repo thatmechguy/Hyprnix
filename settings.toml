@@ -195,13 +195,13 @@ wallpaper_scheme = "m3-tonal-spot"
     community_ids = [ "pywalfox", "zen-browser", "discord", "vscode", "zed", "steam", "papirus-icons" ]
 
 [wallpaper.default]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-d8dxzm.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-e86jmw.jpg"
 
 [wallpaper.last]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-d8dxzm.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-e86jmw.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-d8dxzm.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-e86jmw.jpg"
 
 [widget.cpu]
 display = "text"
