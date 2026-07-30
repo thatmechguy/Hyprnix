@@ -1,0 +1,114 @@
+{
+  "$schema": "https://github.com",
+
+  "logo": null,
+
+  "display": {
+    "separator": " ",
+    "color": {
+      "keys": "magenta",
+      "title": "blue"
+    }
+  },
+
+  "modules": [
+    {
+      "type": "title"
+    },
+
+    {
+      "type": "custom",
+      "format": "────────────────────────"
+    },
+
+    {
+      "type": "os",
+      "key": " │"
+    },
+
+    {
+      "type": "kernel",
+      "key": " │"
+    },
+
+    {
+      "type": "command",
+      "key": "󰔛 │",
+      "text": "b=$(stat -c %W /); n=$(date +%s); d=$((n-b)); printf \"%dd\" $((d/86400))"
+    },
+
+    {
+      "type": "uptime",
+      "key": "󰅐 │"
+    },
+
+    {
+      "type": "packages",
+      "key": "󰏖 │"
+    },
+
+    {
+      "type": "custom",
+      "format": ""
+    },
+
+    {
+      "type": "wm",
+      "key": "󱂬 │"
+    },
+
+    {
+      "type": "terminal",
+      "key": " │"
+    },
+
+    {
+      "type": "shell",
+      "key": " │"
+    },
+
+    {
+      "type": "display",
+      "key": "󰍹 │"
+    },
+
+    {
+      "type": "custom",
+      "format": ""
+    },
+
+    {
+      "type": "cpu",
+      "key": "󰻠 │",
+      "freq": false
+    },
+
+    {
+      "type": "gpu",
+      "key": "󰢮 │"
+    },
+
+    {
+      "type": "memory",
+      "key": "󰍛 │"
+    },
+
+    {
+      "type": "disk",
+      "key": " │"
+    },
+
+    {
+      "type": "custom",
+      "format": "────────────────────────"
+    },
+
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "block": {
+        "range": [1, 8]
+      }
+    }
+  ]
+}
