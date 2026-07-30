@@ -9,14 +9,17 @@ order = [ "Top" ]
     [bar.Top]
     background_opacity = 0.84999998100101948
     border = "primary"
+    border_width = 1.5
     capsule_radius = 12
     center = [ "notifications", "todo", "media", "power_profile", "clock", "date", "wallhaven", "caffeine" ]
     end = [ "network", "group:g2", "bluetooth", "tray", "notes", "clipboard", "volume", "brightness", "battery", "session" ]
+    margin_edge = 6
+    margin_ends = 6
     padding = 6
-    radius = 15
+    radius = 5
     shadow = false
     start = [ "launcher", "taskbar", "group:g1" ]
-    thickness = 33
+    thickness = 30
 
         [[bar.Top.capsule_group]]
         enabled = true
@@ -68,12 +71,11 @@ width = 800
 
 [dock]
 background_opacity = 0.84999998100101948
-enabled = true
 icon_size = 39
 launcher_icon = "layout-grid"
 launcher_position = "start"
 pinned = [ "zen", "files", "kitty", "dev.zed.Zed", "codium", "org.blender.Blender", "org.freecad.FreeCAD", "vesktop", "steam" ]
-radius = 15
+radius = 5
 reserve_space = false
 shadow = false
 show_dots = true
@@ -151,7 +153,7 @@ api_key = ""
 download_dir = "~/Pictures/Wallpapers"
 
 [plugins]
-enabled = [ "noctalia/wallhaven", "noctalia/notes", "noctalia/timer", "nightwatch75/todo" ]
+enabled = [ "noctalia/wallhaven", "noctalia/timer", "nightwatch75/todo", "noctalia/notes" ]
 
 [shell]
 avatar_path = "/home/thatmechguy/Downloads/0a398a0299f1ea314f8288d160655bba.png"
@@ -167,14 +169,18 @@ polkit_agent = true
     sort_by_usage = false
 
     [shell.panel]
-    clipboard_placement = "attached"
-    launcher_placement = "attached"
+    clipboard_position = "auto"
+    control_center_placement = "floating"
     open_near_click_clipboard = true
     open_near_click_launcher = true
-    polkit_placement = "attached"
+    polkit_position = "auto"
     session_placement = "floating"
     shadow = false
     transparency_mode = "soft"
+    wallpaper_placement = "floating"
+
+    [shell.screen_corners]
+    size = 5
 
     [shell.screenshot]
     directory = "~/Pictures/Screenshots"
@@ -182,20 +188,20 @@ polkit_agent = true
 [theme]
 mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "vibrant"
+wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "helix", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
-    community_ids = [ "pywalfox", "zen-browser", "vscode", "zed", "discord", "papirus-icons", "steam" ]
+    community_ids = [ "pywalfox", "zen-browser", "discord", "vscode", "zed", "steam", "papirus-icons" ]
 
 [wallpaper.default]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-9o97zk.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-d8dxzm.jpg"
 
 [wallpaper.last]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-9o97zk.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-d8dxzm.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-9o97zk.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-d8dxzm.jpg"
 
 [widget.cpu]
 display = "text"
@@ -223,7 +229,8 @@ type = "noctalia/notes:notes"
 display = "text"
 
 [widget.taskbar]
-capsule_radius = 15
+capsule = true
+capsule_radius = "auto"
 empty_color = "surface"
 group_by_workspace = true
 occupied_color = "on_hover"
