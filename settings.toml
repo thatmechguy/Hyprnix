@@ -12,7 +12,19 @@ order = [ "Top" ]
     border_width = 1.5
     capsule_radius = 12
     center = [ "notifications", "todo", "media", "power_profile", "clock", "date", "wallhaven", "caffeine" ]
-    end = [ "network", "group:g2", "bluetooth", "tray", "notes", "clipboard", "volume", "brightness", "battery", "session" ]
+    end = [
+        "network",
+        "group:g2",
+        "bluetooth",
+        "nix-monitor",
+        "tray",
+        "notes",
+        "clipboard",
+        "volume",
+        "brightness",
+        "battery",
+        "session"
+    ]
     margin_edge = 6
     margin_ends = 6
     padding = 6
@@ -153,12 +165,13 @@ api_key = ""
 download_dir = "~/Pictures/Wallpapers"
 
 [plugins]
-enabled = [ "noctalia/wallhaven", "noctalia/timer", "nightwatch75/todo", "noctalia/notes" ]
+enabled = [ "noctalia/wallhaven", "noctalia/timer", "nightwatch75/todo", "noctalia/notes", "avivbintangaringga/nix-monitor" ]
 
 [shell]
 avatar_path = "/home/thatmechguy/Downloads/0a398a0299f1ea314f8288d160655bba.png"
 password_style = "random"
 polkit_agent = true
+screen_time_enabled = true
 
     [shell.greeter_sync]
     auto_sync = true
@@ -192,16 +205,16 @@ wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "helix", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
-    community_ids = [ "pywalfox", "zen-browser", "discord", "vscode", "zed", "steam", "papirus-icons" ]
+    community_ids = [ "pywalfox", "zen-browser", "discord", "obsidian", "vscode", "zed", "steam", "obs", "papirus-icons" ]
 
 [wallpaper.default]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-e86jmw.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-mlgxm9.jpg"
 
 [wallpaper.last]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-e86jmw.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-mlgxm9.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-e86jmw.jpg"
+path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-mlgxm9.jpg"
 
 [widget.cpu]
 display = "text"
@@ -221,6 +234,10 @@ display = "text"
 
 [widget.network_tx]
 display = "text"
+
+[widget.nix-monitor]
+show_text = false
+type = "avivbintangaringga/nix-monitor:nix-monitor"
 
 [widget.notes]
 type = "noctalia/notes:notes"
