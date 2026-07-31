@@ -79,7 +79,6 @@ hl.window_rule({
 hl.layer_rule({
 	name = "noctalia",
 	match = {
-
 		namespace = "noctalia-background-.*|^noctalia-.*",
 	},
 	ignore_alpha = 0.5,
@@ -89,9 +88,29 @@ hl.layer_rule({
 
 hl.window_rule({
 	match = {
-		class = ".*Nautilus.*|Xdg-desktop-portal-gtk",
+		class = ".*Nautilus.*|Xdg-desktop-portal-gtk|xdg-desktop-portal-gtk",
 	},
 	float = true,
 	center = true,
 	size = {850, 600},
+})
+
+hl.window_rule({
+    match = {
+        class = "NexusMods.App",
+        title = ".*Curvy.*|.*FOMOD.*",
+    },
+    float = true,
+    center = true,
+    size = {800, 600}
+})
+
+hl.window_rule({
+    match = {
+        class = "blender",
+        title = "Preferences",
+    },
+    float = true,
+    center = true,
+    size = {900, 700},
 })
