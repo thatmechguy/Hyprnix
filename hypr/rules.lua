@@ -114,3 +114,12 @@ hl.window_rule({
     center = true,
     size = {900, 700},
 })
+
+hl.window_rule({
+    match = {
+        class = "dev.noctalia.Noctalia",
+    },
+    float = true,
+    center = true,
+    size = {1500, 900}
+})
