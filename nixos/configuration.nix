@@ -41,9 +41,8 @@
   services.gvfs.enable = true;
   programs.localsend.enable = true;
   services.gnome.gnome-keyring.enable = true;
-
-
-
+  services.fstrim.enable = true;
+  services.fstrim.interval = "weekly";
 
   # =========================================================================
   # ===                        LOCALIZATION & TIME                        ===
