@@ -79,6 +79,9 @@
     package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
     greeter-args = "";
     settings = {
+      output = {
+        scale = 1;
+      };
       cursor = {
         theme = "Adwaita";
         size = 24;
