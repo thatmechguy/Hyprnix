@@ -1,19 +1,11 @@
 { pkgs, inputs, ... }:
 
 {
-  nix.settings = {
-    substituters = [
-      "https://cache.nixos-cuda.org"
-    ];
-    trusted-public-keys = [
-      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
-    ];
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      xwayland.enable = true;
+    };
 
   xdg.portal = {
     enable = true;

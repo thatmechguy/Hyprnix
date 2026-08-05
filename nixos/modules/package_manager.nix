@@ -7,6 +7,7 @@
     dates = "weekly";
     options = "--delete-older-than 5d";
   };
+  nix.settings.auto-optimise-store = true;
 
   nix.settings = {
     experimental-features = [
@@ -14,10 +15,22 @@
       "flakes"
     ];
     substituters = [
+      "https://cache.nixos.org"
       "https://cache.nixos-cuda.org"
+      "https://hyprland.cachix.org"
+      "https://noctalia.cachix.org"
     ];
     trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+      "hyprland.cachix.org-1:a7HPpC97n22A03WSiEj35LgGyLDp64561IP2SqA3ynE="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
+    # Crucial: Allows your user and wheel group to use binary caches defined in flakes
+    trusted-users = [
+      "root"
+      "thatmechguy"
+      "@wheel"
     ];
   };
 

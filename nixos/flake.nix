@@ -4,7 +4,9 @@
   # =========================================================================
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+    # Official Hyprland input
+    hyprland.url = "github:hyprwm/Hyprland";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -30,8 +32,14 @@
   };
 
   nixConfig = {
-    extra-substituters = [ "https://noctalia.cachix.org" ];
-    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+    extra-substituters = [
+      "https://noctalia.cachix.org"
+      "https://hyprland.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "hyprland.cachix.org-1:a7HPpC97n22A03WSiEj35LgGyLDp64561IP2SqA3ynE="
+    ];
   };
 
   # =========================================================================
@@ -42,7 +50,6 @@
       self,
       nixpkgs,
       home-manager,
-      nix-cachyos-kernel,
       ...
     }@inputs:
     {
@@ -57,17 +64,13 @@
         };
 
         modules = [
-          {
-            nixpkgs.overlays = [ nix-cachyos-kernel.overlay ];
-            }
-
           ./configuration.nix
           ./hardware-configuration.nix
 
           home-manager.nixosModules.home-manager
 
           # =========================================================================
-          # ===                         HOME-MANAGER CONFIG                        ===
+          # ===                         HOME-MANAGER CONFIG                       ===
           # =========================================================================
           {
             home-manager.useGlobalPkgs = true;

@@ -74,26 +74,6 @@
     "modesetting"
   ];
 
-  programs.noctalia-greeter = {
-    enable = true;
-    package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    greeter-args = "";
-    settings = {
-      output = {
-        scale = 1;
-      };
-      cursor = {
-        theme = "Adwaita";
-        size = 24;
-      };
-      keyboard = {
-        layout = "us";
-      };
-    };
-  };
-
-
-
 
   # =========================================================================
   # ===                          AUDIO & PRINTING                         ===
@@ -133,7 +113,7 @@
     description = "thatmechguy";
     extraGroups = [
       "networkmanager"
-      "wheel"
+      "@wheel"
       "dialout"
       "libvirtd"
       "adbusers"
