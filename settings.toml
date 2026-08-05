@@ -1,4 +1,4 @@
-config_version = 8
+config_version = 10
 
 [backdrop]
 enabled = true
@@ -201,7 +201,6 @@ screen_time_enabled = true
 [theme]
 mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "helix", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
@@ -218,6 +217,7 @@ path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-mlgxm9.jpg"
 
 [widget.cpu]
 display = "text"
+visualization = "none"
 
 [widget.launcher]
 glyph = "layout-grid"
@@ -231,9 +231,11 @@ show_label = false
 
 [widget.network_rx]
 display = "text"
+visualization = "none"
 
 [widget.network_tx]
 display = "text"
+visualization = "none"
 
 [widget.nix-monitor]
 show_text = false
@@ -244,6 +246,7 @@ type = "noctalia/notes:notes"
 
 [widget.ram]
 display = "text"
+visualization = "none"
 
 [widget.taskbar]
 capsule = true
@@ -255,6 +258,7 @@ workspace_label_placement = "inside"
 
 [widget.temp]
 display = "text"
+visualization = "none"
 
 [widget.todo]
 type = "nightwatch75/todo:todo"
