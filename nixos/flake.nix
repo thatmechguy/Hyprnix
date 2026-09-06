@@ -5,9 +5,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Official Hyprland input
-    hyprland.url = "github:hyprwm/Hyprland";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,8 +22,8 @@
 
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -34,11 +31,9 @@
   nixConfig = {
     extra-substituters = [
       "https://noctalia.cachix.org"
-      "https://hyprland.cachix.org"
     ];
     extra-trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-      "hyprland.cachix.org-1:a7HPpC97n22A03WSiEj35LgGyLDp64561IP2SqA3ynE="
     ];
   };
 
@@ -77,7 +72,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
 
-            home-manager.users.thatmechguy = import ./home.nix;
+            home-manager.users.chirayu = import ./home.nix;
           }
         ];
       };

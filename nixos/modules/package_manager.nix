@@ -29,8 +29,8 @@
     # Crucial: Allows your user and wheel group to use binary caches defined in flakes
     trusted-users = [
       "root"
-      "thatmechguy"
-      "@wheel"
+      "chirayu"
+      "wheel"
     ];
   };
 

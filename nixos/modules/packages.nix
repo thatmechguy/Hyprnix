@@ -3,7 +3,6 @@
 {
     programs.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       xwayland.enable = true;
     };
 
@@ -52,7 +51,6 @@
     kdePackages.okular
     vlc
     smartmontools
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     distrobox
     gnome-text-editor
@@ -68,6 +66,9 @@
     _7zz
     unzip
     p7zip
+
+    jdk25
+    inputs.helium.packages.${system}.default
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

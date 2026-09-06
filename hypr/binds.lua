@@ -4,7 +4,7 @@ local closeWindowBind = hl.bind(mod .. " + Q", hl.dsp.window.close())
 
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd("nautilus"))
-hl.bind(mod .. " + B", hl.dsp.exec_cmd("zen"))
+hl.bind(mod .. " + B", hl.dsp.exec_cmd("helium"))
 hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty -e btop --force-utf"))
 hl.bind(mod .. " +TAB", hl.dsp.focus({ workspace = "previous" }))
 -- hl.bind("ALT + TAB", hl.dsp.window.cycle_next())

@@ -9,8 +9,8 @@
   # =========================================================================
   # ===                       USER & HOME DEFINITIONS                      ===
   # =========================================================================
-  home.username = "thatmechguy";
-  home.homeDirectory = "/home/thatmechguy";
+  home.username = "chirayu";
+  home.homeDirectory = "/home/chirayu";
   home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
@@ -80,9 +80,9 @@
       ll = "ls -l";
       edit = "sudo -e";
       update = "sudo nixos-rebuild switch";
-      nix-switch = "sudo nixos-rebuild switch -I nixos-config=/home/thatmechguy/Hyprnix/nixos/configuration.nix";
-      flake-switch = "sudo nixos-rebuild switch --flake /home/thatmechguy/Hyprnix/nixos#$(hostname)";
-      flake-update = "sudo nix flake update --flake /home/thatmechguy/Hyprnix/nixos/";
+      nix-switch = "sudo nixos-rebuild switch -I nixos-config=/home/chirayu/Hyprnix/nixos/configuration.nix";
+      flake-switch = "sudo nixos-rebuild switch --flake /home/chirayu/Hyprnix/nixos#$(hostname)";
+      flake-update = "sudo nix flake update --flake /home/chirayu/Hyprnix/nixos/";
     };
 
     history.size = 10000;

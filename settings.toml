@@ -1,4 +1,4 @@
-config_version = 10
+config_version = 14
 
 [backdrop]
 enabled = true
@@ -25,8 +25,8 @@ order = [ "Top" ]
         "battery",
         "session"
     ]
-    margin_edge = 6
-    margin_ends = 6
+    margin_edge = 4
+    margin_ends = 4
     padding = 6
     radius = 5
     shadow = false
@@ -120,6 +120,7 @@ behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
 address = "nashik, india"
 
 [lockscreen_widgets]
+enabled = false
 schema_version = 2
 widget_order = [ "lockscreen-login-box@eDP-1" ]
 
@@ -129,11 +130,13 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 201.0
+    box_height = 196.0
     box_width = 720.0
     cx = 960.0
     cy = 1081.0
     output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -148,7 +151,10 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
+        show_media = true
         show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
 [notification]
 background_opacity = 0.84999998100101948
@@ -165,7 +171,7 @@ api_key = ""
 download_dir = "~/Pictures/Wallpapers"
 
 [plugins]
-enabled = [ "noctalia/wallhaven", "noctalia/timer", "nightwatch75/todo", "noctalia/notes", "avivbintangaringga/nix-monitor" ]
+enabled = [ "noctalia/timer", "nightwatch75/todo", "noctalia/notes", "avivbintangaringga/nix-monitor", "noctalia/wallhaven" ]
 
 [shell]
 avatar_path = "/home/thatmechguy/Downloads/0a398a0299f1ea314f8288d160655bba.png"
@@ -201,19 +207,20 @@ screen_time_enabled = true
 [theme]
 mode = "dark"
 source = "wallpaper"
+wallpaper_scheme = "soft"
 
     [theme.templates]
     builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "helix", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
     community_ids = [ "pywalfox", "zen-browser", "discord", "obsidian", "vscode", "zed", "steam", "obs", "papirus-icons" ]
 
 [wallpaper.default]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-mlgxm9.jpg"
+path = "/home/chirayu/Pictures/Wallpapers/wallhaven-k8j3y6.png"
 
 [wallpaper.last]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-mlgxm9.jpg"
+path = "/home/chirayu/Pictures/Wallpapers/wallhaven-k8j3y6.png"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/thatmechguy/Pictures/Wallpapers/wallhaven-mlgxm9.jpg"
+path = "/home/chirayu/Pictures/Wallpapers/wallhaven-k8j3y6.png"
 
 [widget.cpu]
 display = "text"

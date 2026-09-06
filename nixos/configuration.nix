@@ -108,12 +108,12 @@
   # =========================================================================
   # ===                           USER ACCOUNTS                           ===
   # =========================================================================
-  users.users."thatmechguy" = {
+  users.users."chirayu" = {
     isNormalUser = true;
-    description = "thatmechguy";
+    description = "chirayu";
     extraGroups = [
       "networkmanager"
-      "@wheel"
+      "wheel"
       "dialout"
       "libvirtd"
       "adbusers"
